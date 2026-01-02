@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Shape{
+	private int length;
+	private int breadth;
+	
+	public Shape(int length , int breadth){
+		this.length = length;
+		this.breadth = breadth;
+	}
+	
+	public int getlength(){
+		return length;
+	}
+	public int getbreadth(){
+		return breadth;
+	}
+	
+	void getAreaDetails(){
+		System.out.println(length + " " + breadth);
+	}
+}
+
+class Rectangle extends Shape{
+	
+	public Rectangle(int length , int breadth){
+		super(length,breadth);
+	}
+	
+	public int getArea(){
+		int area = super.getlength()*super.getbreadth();
+		return area;
+	}
+}
+
+public class Solution {   
+	public static void main(String args[] ) throws Exception {
+        
+		Scanner sc = new Scanner(System.in);
+        int length = sc.nextInt();
+        int breadth = sc.nextInt();
+
+        Shape shape = new Shape(length,breadth);
+        shape.getAreaDetails();
+		
+		Rectangle rectangle = new Rectangle(length,breadth);
+        System.out.print(rectangle.getArea());
+
+    }
+}
